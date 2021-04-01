@@ -1,6 +1,7 @@
 import React from 'react';
 import CardColumns from 'react-bootstrap/CardColumns';
 import HornedBeasts from './HornedBeasts';
+import FilterBeast from './FilterBeast';
 
 class Main extends React.Component {
 

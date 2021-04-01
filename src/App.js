@@ -10,7 +10,7 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      num: "",
+      horn: "",
       displayModal: false,
       src: 'https://placehold.it/500x100/444',
     }
@@ -19,15 +19,18 @@ class App extends React.Component{
   showFavePic = (animal) => {
     // console.log("clicked")
     // console.log(animal)
-    this.setState({      
+    this.setState({     
       src: animal,
       displayModal: true
     })
   }
 
-  showFilteredPic = (num) => {
+  getHornNum = (horn) => {
     console.log("clicked")
-    console.log(num)
+    console.log(horn)
+    this.setState({     
+      horn: horn
+    })
     // // console.log(animal)
     
   }
@@ -41,9 +44,9 @@ class App extends React.Component{
       <>
         <Header />
         <Container>
-          <FilterBeast showFilteredPic={this.showFilteredPic}/>          
+          <FilterBeast getHornNum={this.getHornNum}/>          
         </Container>
-        <Main animalArray = {animalArray} showFavePic={this.showFavePic}/>
+        <Main animalArray = {animalArray} showFavePic={this.showFavePic} horn/>
         <SelectedBeast 
         displayModal ={this.state.displayModal}
         hideModal={this.hideModal}

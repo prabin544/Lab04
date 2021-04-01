@@ -1,12 +1,11 @@
 import React from 'react';
-import Form from 'react-bootstrap/form';
-import Button from 'react-bootstrap/Button';
+import { Form, Button } from 'react-bootstrap';
 
 class FilterBeast extends React.Component {
     onFormSubmit(event) {
         event.preventDefault();
         // console.log("Horn num is :", this.state.num);
-        this.props.showFilteredPic(this.state.num)
+        this.props.getHornNum(this.state.num)
     }
     onChangeNum(event) {
         this.setState({ num: event.target.value })
